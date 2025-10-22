@@ -13,14 +13,14 @@
         <div
           v-for="(card, index) in cards"
           :key="card.id"
-          class="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-700 hover:scale-105 bg-white"
+          class="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-700 hover:scale-105 bg-white border border-gradient"
         >
           <!-- Card Background Image -->
           <div class="relative h-80 overflow-hidden">
             <img 
               :src="card.backgroundImage" 
               :alt="card.title"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
             />
             <!-- Gradient Overlay -->
             <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-transparent"></div>
@@ -51,35 +51,52 @@ const cards = [
   {
     id: 'vale-dos-passaros',
     title: 'Vale dos Pássaros',
-    backgroundImage: '/vale-dos-passaros.avif'
+    backgroundImage: '/images/vale-dos-passaros.avif',
+    url: 'https://valedospassaros.angeleti.com.br/'
   },
   {
     id: 'golden-green',
     title: 'Golden Green',
-    backgroundImage: '/goldem-grem.avif'
+    backgroundImage: '/images/golden-green.avif',
+    url: 'https://goldengreen.angeleti.com.br/'
   },
   {
     id: 'dom-village',
     title: 'Dom Village',
-    backgroundImage: '/dom-village.png'
+    backgroundImage: '/images/dom-village.png',
+    url: 'https://domvillage.angeleti.com.br/'
   }
 ]
 
 const goToEmpreendimento = (empreendimentoId) => {
-  const urls = {
-    'vale-dos-passaros': '/vale-dos-passaros',
-    'golden-green': '/golden-green',
-    'dom-village': '/dom-village'
+  const card = cards.find(c => c.id === empreendimentoId)
+  if (card && card.url) {
+    window.open(card.url, '_blank')
   }
-  
-  const url = urls[empreendimentoId] || '#'
-  console.log(`Navegando para: ${url}`)
-  alert(`Redirecionando para ${empreendimentoId}`)
 }
 </script>
 
 <style scoped>
 .text-gradient {
   @apply bg-gradient-to-r from-angelette-600 to-angelette-800 bg-clip-text text-transparent;
+}
+
+.border-gradient {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #3a9d3a, #2d7a2d) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 25px 50px -12px rgba(58, 157, 58, 0.25), 
+              0 0 0 1px rgba(58, 157, 58, 0.1);
+}
+
+.group:hover .border-gradient {
+  box-shadow: 0 35px 60px -12px rgba(58, 157, 58, 0.4), 
+              0 0 0 1px rgba(58, 157, 58, 0.2);
+}
+
+/* Garantir que as imagens sejam bem posicionadas */
+.relative img {
+  object-fit: cover;
+  object-position: center center;
 }
 </style>

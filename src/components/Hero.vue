@@ -18,7 +18,7 @@
       <div class="max-w-4xl mx-auto">
         <!-- Main Title -->
         <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-          Seja bem-vindo a Angélette
+          Seja bem-vindo a ANGELETTE INCORPORADORA
         </h1>
 
         <!-- Subtitle -->
@@ -40,12 +40,5 @@
 </template>
 
 <script setup>
-// Não precisa de imports para este componente
-
-const scrollToSection = (sectionId) => {
-  const element = document.querySelector(sectionId)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
-}
+// Componente Hero - banner principal
 </script>

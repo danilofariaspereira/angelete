@@ -1,6 +1,6 @@
-# Angélette Incorporadora - Home Institucional
+# ANGELETTE INCORPORADORA - Home Institucional
 
-Uma landing page moderna e responsiva para a Angélette Incorporadora, desenvolvida com Vue.js 3, Vite e TailwindCSS.
+Uma landing page moderna e responsiva para a ANGELETTE INCORPORADORA, desenvolvida com Vue.js 3, Vite e TailwindCSS.
 
 ## 🎯 Características
 
