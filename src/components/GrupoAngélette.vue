@@ -4,7 +4,7 @@
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          GRUPO <span class="text-gradient">ANGÉLETTE</span>
+          GRUPO <span class="text-gradient">ANGELETI</span>
         </h2>
       </div>
 

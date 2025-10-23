@@ -38,12 +38,9 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Contact Information Card -->
         <div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 p-8">
-          <h3 class="text-2xl font-bold text-white mb-2">
+          <h3 class="text-2xl font-bold text-white mb-8">
             ANGELETI INCORPORADORA
           </h3>
-          <p class="text-gray-200 mb-8">
-            Teresópolis, RJ - Bairro São Pedro
-          </p>
           
           <div class="space-y-6">
             <div
