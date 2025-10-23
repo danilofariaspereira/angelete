@@ -1,6 +1,6 @@
-# ANGELETTE INCORPORADORA - Home Institucional
+# ANGELETI INCORPORADORA - Home Institucional
 
-Uma landing page moderna e responsiva para a ANGELETTE INCORPORADORA, desenvolvida com Vue.js 3, Vite e TailwindCSS.
+Uma landing page moderna e responsiva para a ANGELETI INCORPORADORA, desenvolvida com Vue.js 3, Vite e TailwindCSS.
 
 ## 🎯 Características
 

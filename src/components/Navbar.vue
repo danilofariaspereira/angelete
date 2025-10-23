@@ -13,7 +13,7 @@
         <div class="w-10 h-10 rounded-xl overflow-hidden">
           <img 
             src="/images/logo-angelette.avif" 
-            alt="ANGELETTE INCORPORADORA"
+            alt="ANGELETI INCORPORADORA"
             class="w-full h-full object-contain"
             @error="handleLogoError"
           />
@@ -23,7 +23,7 @@
             'font-bold text-lg transition-colors duration-300',
             isScrolled ? 'text-white' : 'text-white'
           ]">
-            ANGELETTE
+            ANGELETI
           </span>
           <span :class="[
             'text-xs font-semibold uppercase tracking-wider transition-colors duration-300',
@@ -206,7 +206,7 @@ const scrollToSection = (href) => {
   } else if (href === '#contato') {
     // Abrir WhatsApp para contato
     const phoneNumber = '5521994237110'
-    const message = `Olá, ANGELETTE INCORPORADORA! Vim através do seu site, gostaria de saber mais informações.`
+    const message = `Olá, ANGELETI INCORPORADORA! Vim através do seu site, gostaria de saber mais informações.`
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')
   } else {

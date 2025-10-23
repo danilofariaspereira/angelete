@@ -39,7 +39,7 @@
         <!-- Contact Information Card -->
         <div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 p-8">
           <h3 class="text-2xl font-bold text-white mb-2">
-            ANGELETTE INCORPORADORA
+            ANGELETI INCORPORADORA
           </h3>
           <p class="text-gray-200 mb-8">
             Teresópolis, RJ - Bairro São Pedro
@@ -85,7 +85,7 @@
             Nossa Localização
           </h3>
           <p class="text-gray-200 mb-6">
-            ANGELETTE INCORPORADORA no coração de Teresópolis
+            ANGELETI INCORPORADORA no coração de Teresópolis
           </p>
           
           <!-- Google Map -->
@@ -149,7 +149,7 @@ const contatoInfo = [
 
 const handleWhatsAppClick = () => {
   const phoneNumber = '5521994237110'
-    const message = `Olá, ANGELETTE INCORPORADORA! Vim através do seu site, gostaria de saber mais informações.`
+    const message = `Olá, ANGELETI INCORPORADORA! Vim através do seu site, gostaria de saber mais informações.`
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(url, '_blank')
 }
