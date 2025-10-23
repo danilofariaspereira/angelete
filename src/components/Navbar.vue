@@ -111,20 +111,12 @@
     <Transition name="mobile-menu">
       <div
         v-if="isMobileMenuOpen"
-        :class="[
-          'lg:hidden rounded-xl mt-2 overflow-hidden transition-all duration-300',
-          isScrolled 
-            ? 'bg-white/95 backdrop-blur-md border border-gray-200 shadow-xl' 
-            : 'bg-white/10 backdrop-blur-md border border-white/20 shadow-xl'
-        ]"
+        class="lg:hidden rounded-xl mt-2 overflow-hidden transition-all duration-300 bg-white border border-gray-200 shadow-xl"
       >
         <div class="py-4 space-y-2">
           <div v-for="(item, index) in menuItems" :key="index">
             <div v-if="item.dropdown" class="px-4 py-2">
-              <div :class="[
-                'font-medium mb-2 transition-all duration-300',
-                isInBanner || isOverDarkSection ? 'text-white' : 'text-gray-600'
-              ]">
+              <div class="font-medium mb-2 text-gray-900 transition-all duration-300">
                 {{ item.name }}
               </div>
               <div class="ml-4 space-y-1">
@@ -132,12 +124,7 @@
                   v-for="(dropdownItem, dropdownIndex) in item.dropdown"
                   :key="dropdownIndex"
                   @click="scrollToSection(dropdownItem.href)"
-                  :class="[
-                    'block w-full text-left px-2 py-1 rounded transition-all duration-300 hover:scale-105',
-                    isScrolled 
-                      ? 'text-white hover:text-gray-200 hover:bg-white/20' 
-                      : 'text-white hover:text-gray-200 hover:bg-white/20'
-                  ]"
+                  class="block w-full text-left px-2 py-1 rounded transition-all duration-300 hover:scale-105 text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                 >
                   {{ dropdownItem.name }}
                 </button>
@@ -146,12 +133,7 @@
             <button
               v-else
               @click="scrollToSection(item.href)"
-              :class="[
-                'block w-full text-left px-4 py-2 transition-all duration-300 hover:scale-105',
-                isInBanner || isOverDarkSection 
-                  ? 'text-white hover:text-gray-200 hover:bg-white/20' 
-                  : 'text-gray-600 hover:text-angelette-400 hover:bg-angelette-50'
-              ]"
+              class="block w-full text-left px-4 py-2 transition-all duration-300 hover:scale-105 text-gray-900 hover:text-angelette-600 hover:bg-angelette-50"
             >
               {{ item.name }}
             </button>
