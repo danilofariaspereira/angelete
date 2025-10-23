@@ -91,19 +91,10 @@
       <!-- Mobile Menu Button -->
       <button
         @click="isMobileMenuOpen = !isMobileMenuOpen"
-        :class="[
-          'lg:hidden p-2 rounded-lg transition-colors duration-300',
-          isScrolled ? 'hover:bg-gray-100' : 'hover:bg-white/20'
-        ]"
+        class="lg:hidden p-2 rounded-full border-2 border-white transition-all duration-300 hover:bg-white/20"
       >
-        <Menu v-if="!isMobileMenuOpen" :class="[
-          'w-6 h-6 transition-colors duration-300',
-          isScrolled ? 'text-white' : 'text-white'
-        ]" />
-        <X v-else :class="[
-          'w-6 h-6 transition-colors duration-300',
-          isScrolled ? 'text-white' : 'text-white'
-        ]" />
+        <Menu v-if="!isMobileMenuOpen" class="w-6 h-6 transition-colors duration-300 text-angelette-600" />
+        <X v-else class="w-6 h-6 transition-colors duration-300 text-angelette-600" />
       </button>
     </div>
 
