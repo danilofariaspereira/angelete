@@ -22,7 +22,7 @@
         <div class="max-w-4xl mx-auto">
           <!-- Main Title -->
           <h1 class="text-3xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight">
-            Sobre a <span class="text-gradient-white">ANGELETI INCORPORADORA</span>
+            Sobre a <span class="text-gradient-white">Angeleti Incorporadora</span>
           </h1>
 
           <!-- Subtitle -->
@@ -55,7 +55,7 @@
           </h2>
           <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Fundada com a visão de criar empreendimentos únicos que respeitam a natureza, 
-            a ANGELETI INCORPORADORA E CONSTRUTORA nasceu da paixão por transformar paisagens em lugares 
+            a Angeleti Incorporadora e Construtora nasceu da paixão por transformar paisagens em lugares 
             especiais para viver.
           </p>
         </div>
@@ -101,7 +101,7 @@
             <div class="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Equipe ANGELETI INCORPORADORA"
+                alt="Equipe Angeleti Incorporadora"
                 class="w-full h-96 object-cover"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -177,7 +177,7 @@
               Pronto para Fazer Parte da Nossa História?
             </h3>
             <p class="text-xl text-gray-600 mb-8">
-              Junte-se às centenas de famílias que já escolheram a ANGELETI INCORPORADORA para realizar 
+              Junte-se às centenas de famílias que já escolheram a Angeleti Incorporadora para realizar 
               o sonho da casa própria em um ambiente único e especial.
             </p>
             <button
@@ -324,7 +324,7 @@ const goToEmpreendimentos = () => {
 const goToContato = () => {
   // Abrir WhatsApp com mensagem pré-definida
   const phoneNumber = '5521994237110'
-  const message = `Olá, ANGELETI INCORPORADORA! Vim através do seu site, gostaria de saber mais informações.`
+  const message = `Olá, Angeleti Incorporadora! Vim através do seu site, gostaria de saber mais informações.`
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(url, '_blank')
 }
@@ -332,7 +332,7 @@ const goToContato = () => {
 const goToBoletoEspecialista = () => {
   // Abrir WhatsApp com o especialista em boletos
   const phoneNumber = '5521967404636'
-  const message = `Olá, ANGELETI INCORPORADORA, vim através do seu site, gostaria de saber sobre a emissão de boletos.`
+  const message = `Olá, Angeleti Incorporadora, vim através do seu site, gostaria de saber sobre a emissão de boletos.`
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(url, '_blank')
 }

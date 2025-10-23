@@ -1,36 +1,23 @@
 <template>
-  <nav 
-    :class="[
-      'fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 navbar-custom',
-      isScrolled 
-        ? 'bg-white/20 backdrop-blur-md border border-white/30 shadow-xl rounded-full' 
-        : 'bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-full'
-    ]"
-  >
+  <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 navbar-custom bg-angelette-700/30 backdrop-blur-md border border-angelette-600/40 shadow-xl rounded-full">
     <div class="flex items-center justify-between h-full w-full">
       <!-- Logo -->
       <div class="flex items-center">
         <div class="w-10 h-10 rounded-xl overflow-hidden">
           <img 
             src="/images/logo-angelette.avif" 
-            alt="ANGELETI INCORPORADORA"
+            alt="Angeleti Incorporadora"
             class="w-full h-full object-contain"
             @error="handleLogoError"
           />
         </div>
         <div class="ml-3 flex flex-col">
-          <span :class="[
-            'font-bold text-lg transition-colors duration-300',
-            isScrolled ? 'text-white' : 'text-white'
-          ]">
-            ANGELETI
-          </span>
-          <span :class="[
-            'text-xs font-semibold uppercase tracking-wider transition-colors duration-300',
-            isScrolled ? 'text-white' : 'text-white'
-          ]">
-            INCORPORADORA
-          </span>
+        <span class="font-bold text-lg transition-colors duration-300 text-white">
+          ANGELETI
+        </span>
+        <span class="text-xs font-semibold uppercase tracking-wider transition-colors duration-300 text-white">
+          INCORPORADORA
+        </span>
         </div>
       </div>
 
@@ -47,16 +34,10 @@
             @mouseenter="isDropdownOpen = true"
             @mouseleave="isDropdownOpen = false"
           >
-            <span :class="[
-              'font-medium text-sm transition-all duration-300 hover:scale-110',
-              isInBanner || isOverDarkSection ? 'text-white hover:text-gray-200' : 'text-gray-600 hover:text-angelette-400'
-            ]">
+                  <span class="font-medium text-sm transition-all duration-300 hover:scale-110 text-white hover:text-gray-200">
               {{ item.name }}
             </span>
-            <ChevronDown :class="[
-              'w-4 h-4 transition-all duration-300 group-hover:scale-110',
-              isInBanner || isOverDarkSection ? 'text-white group-hover:text-gray-200' : 'text-gray-600 group-hover:text-angelette-400'
-            ]" />
+            <ChevronDown class="w-4 h-4 transition-all duration-300 group-hover:scale-110 text-white group-hover:text-gray-200" />
             
             <Transition name="dropdown">
               <div
@@ -78,10 +59,7 @@
           <button
             v-else
             @click="scrollToSection(item.href)"
-            :class="[
-              'font-medium text-sm transition-all duration-300 hover:scale-110',
-              isInBanner || isOverDarkSection ? 'text-white hover:text-gray-200' : 'text-gray-600 hover:text-angelette-400'
-            ]"
+            class="font-medium text-sm transition-all duration-300 hover:scale-110 text-white hover:text-gray-200"
           >
             {{ item.name }}
           </button>
@@ -91,10 +69,10 @@
       <!-- Mobile Menu Button -->
       <button
         @click="isMobileMenuOpen = !isMobileMenuOpen"
-        class="lg:hidden p-2 rounded-full border-2 border-white transition-all duration-300 hover:bg-white/20"
+        class="lg:hidden p-2 rounded-full transition-all duration-300 hover:bg-white/20"
       >
-        <Menu v-if="!isMobileMenuOpen" class="w-6 h-6 transition-colors duration-300 text-angelette-600" />
-        <X v-else class="w-6 h-6 transition-colors duration-300 text-angelette-600" />
+        <Menu v-if="!isMobileMenuOpen" class="w-6 h-6 transition-colors duration-300 text-white" />
+        <X v-else class="w-6 h-6 transition-colors duration-300 text-white" />
       </button>
     </div>
 
@@ -136,16 +114,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ChevronDown, Menu, X } from 'lucide-vue-next'
 
 const router = useRouter()
 
-const isScrolled = ref(false)
 const isDropdownOpen = ref(false)
 const isMobileMenuOpen = ref(false)
-const isOverDarkSection = ref(false)
 
 const menuItems = [
   { name: 'Home', href: '/', isRouterLink: true },
@@ -153,22 +129,7 @@ const menuItems = [
   { name: 'Contato', href: '#contato' }
 ]
 
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
-  
-  // Detectar se está no banner
-  isInBanner.value = window.scrollY < 400
-  
-  // Detectar se está sobre seção escura (contato)
-  const contatoSection = document.getElementById('contato')
-  if (contatoSection) {
-    const rect = contatoSection.getBoundingClientRect()
-    isOverDarkSection.value = rect.top <= 100 && rect.bottom >= 100
-  }
-}
 
-// Função para verificar se está no banner/hero
-const isInBanner = ref(false)
 
 const scrollToSection = (href) => {
   const menuItem = menuItems.find(item => item.href === href)
@@ -179,7 +140,7 @@ const scrollToSection = (href) => {
   } else if (href === '#contato') {
     // Abrir WhatsApp para contato
     const phoneNumber = '5521994237110'
-    const message = `Olá, ANGELETI INCORPORADORA! Vim através do seu site, gostaria de saber mais informações.`
+    const message = `Olá, Angeleti Incorporadora! Vim através do seu site, gostaria de saber mais informações.`
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')
   } else {
@@ -201,13 +162,6 @@ const handleLogoError = (event) => {
   container.innerHTML = '<span class="text-white font-bold text-2xl">A</span>'
 }
 
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 </script>
 
 <style scoped>

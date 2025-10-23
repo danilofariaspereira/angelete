@@ -39,7 +39,7 @@
         <!-- Contact Information Card -->
         <div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 p-8">
           <h3 class="text-2xl font-bold text-white mb-8">
-            ANGELETI INCORPORADORA
+            Angeleti Incorporadora
           </h3>
           
           <div class="space-y-6">
@@ -82,7 +82,7 @@
             Nossa Localização
           </h3>
           <p class="text-gray-200 mb-6">
-            ANGELETI INCORPORADORA no coração de Teresópolis
+            Angeleti Incorporadora no coração de Teresópolis
           </p>
           
           <!-- Google Map -->
@@ -146,7 +146,7 @@ const contatoInfo = [
 
 const handleWhatsAppClick = () => {
   const phoneNumber = '5521994237110'
-    const message = `Olá, ANGELETI INCORPORADORA! Vim através do seu site, gostaria de saber mais informações.`
+    const message = `Olá, Angeleti Incorporadora! Vim através do seu site, gostaria de saber mais informações.`
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(url, '_blank')
 }

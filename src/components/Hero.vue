@@ -18,7 +18,7 @@
       <div class="max-w-4xl mx-auto">
         <!-- Main Title -->
         <h1 class="text-3xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight">
-          Seja bem-vindo a ANGELETI INCORPORADORA
+          Seja bem-vindo a Angeleti Incorporadora
         </h1>
 
         <!-- Subtitle -->

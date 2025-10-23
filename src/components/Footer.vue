@@ -9,7 +9,7 @@
             <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-angelette-500 to-angelette-700 flex items-center justify-center">
               <img 
                 src="/images/logo-angelette.avif" 
-                alt="ANGELETI INCORPORADORA"
+                alt="Angeleti Incorporadora"
                 class="w-full h-full object-contain"
                 @error="handleLogoError"
               />
@@ -97,13 +97,13 @@
       <div class="border-t border-gray-800 py-8">
         <div class="text-center space-y-2">
           <div class="text-gray-400 text-sm">
-            © 2024 ANGELETI INCORPORADORA. Todos os direitos reservados.
+            © 2024 Angeleti Incorporadora. Todos os direitos reservados.
           </div>
           
           <div class="text-gray-400 text-sm">
             Criado por 
             <a 
-              href="https://wa.me/5521993350228?text=Vim através do site da ANGELETI INCORPORADORA e gostaria de saber mais sobre seu trabalho"
+              href="https://wa.me/5521993350228?text=Vim através do site da Angeleti Incorporadora e gostaria de saber mais sobre seu trabalho"
               target="_blank"
               class="text-angelette-400 hover:text-angelette-300 transition-colors font-medium"
             >
@@ -151,7 +151,7 @@ const socialLinks = [
   },
   {
     icon: 'whatsapp',
-    href: 'https://wa.me/5521994237110?text=Olá, ANGELETI INCORPORADORA! Vim através do seu site, gostaria de saber mais informações.',
+    href: 'https://wa.me/5521994237110?text=Olá, Angeleti Incorporadora! Vim através do seu site, gostaria de saber mais informações.',
     label: 'WhatsApp',
     color: 'hover:text-green-600'
   }

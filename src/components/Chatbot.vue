@@ -10,7 +10,7 @@
         <div class="w-10 h-10 rounded-full overflow-hidden bg-white/20 flex items-center justify-center">
           <img 
             src="/images/logo-angelette.avif" 
-            alt="ANGELETI INCORPORADORA"
+            alt="Angeleti Incorporadora"
             class="w-8 h-8 object-contain"
             @error="handleLogoError"
           />
@@ -31,14 +31,14 @@
           <div class="w-8 h-8 rounded-full bg-angelette-100 flex items-center justify-center flex-shrink-0">
             <img 
               src="/images/logo-angelette.avif" 
-              alt="ANGELETI INCORPORADORA"
+              alt="Angeleti Incorporadora"
               class="w-6 h-6 object-contain"
               @error="handleLogoError"
             />
           </div>
           <div class="bg-gray-100 rounded-lg p-3 max-w-xs">
             <p class="text-sm text-gray-800">
-              Seja bem-vindo à ANGELETI INCORPORADORA!
+              Seja bem-vindo à Angeleti Incorporadora!
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@
           <div class="w-8 h-8 rounded-full bg-angelette-100 flex items-center justify-center flex-shrink-0">
             <img 
               src="/images/logo-angelette.avif" 
-              alt="ANGELETI INCORPORADORA"
+              alt="Angeleti Incorporadora"
               class="w-6 h-6 object-contain"
               @error="handleLogoError"
             />
@@ -134,11 +134,11 @@ const selectOption = (option) => {
 
 const goToWhatsApp = () => {
   let phoneNumber = '5521994237110' // Número padrão para dúvidas e visitas
-  let message = `Olá, ANGELETI INCORPORADORA! Vim através do seu site, gostaria de saber mais informações.`
+  let message = `Olá, Angeleti Incorporadora! Vim através do seu site, gostaria de saber mais informações.`
   
   if (selectedType.value === 'boleto') {
     phoneNumber = '5521967404636' // Número específico para emissão de boleto
-    message = `Olá, ANGELETI INCORPORADORA, vim através do seu site, gostaria de saber sobre a emissão de boletos.`
+    message = `Olá, Angeleti Incorporadora, vim através do seu site, gostaria de saber sobre a emissão de boletos.`
   }
   
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
