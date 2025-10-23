@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section id="home" class="relative min-h-screen md:min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
       <div class="absolute inset-0 bg-gradient-to-br from-angelette-900/85 via-angelette-800/75 to-angelette-700/85 z-10"></div>
@@ -14,22 +14,22 @@
     </div>
 
     <!-- Content -->
-    <div class="relative z-20 container-custom text-center text-white">
+    <div class="relative z-20 container-custom text-center text-white px-5 md:px-0">
       <div class="max-w-4xl mx-auto">
         <!-- Main Title -->
-        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+        <h1 class="text-3xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight">
           Seja bem-vindo a ANGELETI INCORPORADORA
         </h1>
 
         <!-- Subtitle -->
-        <p class="text-xl md:text-2xl mb-12 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-lg md:text-2xl mb-8 md:mb-12 text-gray-200 max-w-3xl mx-auto leading-relaxed">
           Lugar de transformar sonhos em realidade
         </p>
       </div>
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+    <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
       <button 
         @click="scrollToNext"
         class="w-8 h-8 border-2 border-white/70 rounded-full flex items-center justify-center animate-bounce hover:border-white hover:bg-white/10 transition-all duration-300"
