@@ -160,7 +160,7 @@
               class="text-center"
             >
               <div class="text-4xl md:text-5xl font-bold text-white mb-2">
-                {{ numero.number }}
+                {{ animatedNumbers[index] }}{{ numero.suffix }}
               </div>
               <div class="text-angelette-100 font-medium">
                 {{ numero.label }}
@@ -217,6 +217,7 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
 import { ArrowRight, Award, Users, Leaf, Target } from 'lucide-vue-next'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
@@ -253,11 +254,67 @@ const valores = [
 ]
 
 const numeros = [
-  { number: '15+', label: 'Anos de Experiência' },
-  { number: '3', label: 'Empreendimentos Ativos' },
-  { number: '500+', label: 'Famílias Atendidas' },
-  { number: '100%', label: 'Satisfação dos Clientes' }
+  { target: 15, suffix: '+', label: 'Anos de Experiência' },
+  { target: 3, suffix: '', label: 'Empreendimentos Ativos' },
+  { target: 500, suffix: '+', label: 'Famílias Atendidas' },
+  { target: 100, suffix: '%', label: 'Satisfação dos Clientes' }
 ]
+
+// Variáveis reativas para animação dos números
+const animatedNumbers = ref([0, 0, 0, 0])
+const isAnimating = ref(false)
+
+// Função para animar os números
+const animateNumbers = () => {
+  if (isAnimating.value) return
+  isAnimating.value = true
+  
+  const duration = 2000 // 2 segundos
+  const startTime = Date.now()
+  
+  const animate = () => {
+    const elapsed = Date.now() - startTime
+    const progress = Math.min(elapsed / duration, 1)
+    
+    // Usar easing function para suavizar a animação
+    const easeOutCubic = 1 - Math.pow(1 - progress, 3)
+    
+    numeros.forEach((numero, index) => {
+      animatedNumbers.value[index] = Math.floor(numero.target * easeOutCubic)
+    })
+    
+    if (progress < 1) {
+      requestAnimationFrame(animate)
+    } else {
+      // Garantir que todos terminem exatamente no valor final
+      numeros.forEach((numero, index) => {
+        animatedNumbers.value[index] = numero.target
+      })
+      isAnimating.value = false
+    }
+  }
+  
+  requestAnimationFrame(animate)
+}
+
+// Função para detectar quando a seção está visível
+const handleScroll = () => {
+  const numbersSection = document.querySelector('.bg-angelette-600')
+  if (numbersSection && !isAnimating.value) {
+    const rect = numbersSection.getBoundingClientRect()
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0
+    
+    if (isVisible && animatedNumbers.value[0] === 0) {
+      animateNumbers()
+    }
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  // Verificar se já está visível na montagem
+  setTimeout(handleScroll, 100)
+})
 
 const goToEmpreendimentos = () => {
   // Redirecionar para a página inicial com scroll para empreendimentos
