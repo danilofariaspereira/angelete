@@ -1,152 +1,111 @@
-# ANGELETI INCORPORADORA - Home Institucional
+# ANGELETI INCORPORADORA - Site Institucional
 
-Uma landing page moderna e responsiva para a ANGELETI INCORPORADORA, desenvolvida com Vue.js 3, Vite e TailwindCSS.
+Site institucional da ANGELETI INCORPORADORA desenvolvido em **HTML, CSS e JavaScript puro**.
 
-## 🎯 Características
+## 📁 Estrutura do Projeto
 
-- **Design Moderno**: Interface clean e sofisticada com foco na experiência do usuário
-- **Responsivo**: Layout mobile-first otimizado para todos os dispositivos
-- **Animações Suaves**: Transições e micro-interações com Vue Transitions
-- **Glassmorphism**: Menu flutuante com efeito de vidro translúcido
-- **SEO Otimizado**: Meta tags e estrutura semântica para melhor indexação
-- **Performance**: Carregamento otimizado com Vite e componentes modulares
+```
+angelet/
+├── css/                    # Arquivos CSS
+│   ├── styles.css         # Estilos principais
+│   └── animations.css     # Animações personalizadas
+├── js/                     # Arquivos JavaScript
+│   └── script.js          # Funcionalidades JavaScript
+├── pages/                  # Páginas HTML
+│   └── sobre.html         # Página Sobre
+├── public/                 # Arquivos públicos
+│   ├── images/            # Imagens do site
+│   └── favicon.ico        # Favicon
+├── index.html             # Página inicial
+└── package.json           # Configuração do projeto
+```
 
-## 🏗️ Empreendimentos
+## 🚀 Como Executar
 
-### Vale dos Pássaros Residencial
-- **Localização**: Teresópolis/RJ
-- **Paleta**: Verde claro e tons naturais
-- **Características**: Lotes de 360m², entrada 10%, financiamento próprio
+### Opção 1: Servidor HTTP Simples (Recomendado)
 
-### Golden Green Teresópolis
-- **Localização**: Teresópolis/RJ
-- **Paleta**: Verde escuro e dourado
-- **Características**: Lotes 360m² a 1480m², vista 360º, portaria 24h
+```bash
+npm run serve
+```
 
-### Dom Village Maricá
-- **Localização**: Maricá/RJ
-- **Paleta**: Vermelho e branco
-- **Características**: Infraestrutura de clube, próximo às praias
+Isso iniciará um servidor HTTP na porta 3000 e abrirá automaticamente no navegador.
 
-## 🛠️ Tecnologias
+### Opção 2: Python (se instalado)
 
-- **Vue.js 3**: Framework reativo com Composition API
-- **Vite**: Build tool moderno e rápido
-- **TailwindCSS**: Estilização e design system
-- **Lucide Vue Next**: Ícones modernos
-- **PostCSS**: Processamento de CSS
+```bash
+# Python 3
+python -m http.server 3000
 
-## 🚀 Instalação
+# Python 2
+python -m SimpleHTTPServer 3000
+```
 
-1. Clone o repositório
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
+### Opção 3: Node.js http-server
 
-3. Execute o projeto:
-   ```bash
-   npm run dev
-   ```
+```bash
+npx http-server . -p 3000 -o
+```
 
-4. Acesse `http://localhost:3000`
+### Opção 4: Abrir diretamente
 
-## 📱 Seções da Home
+Você pode abrir o arquivo `index.html` diretamente no navegador, mas algumas funcionalidades podem não funcionar corretamente devido às políticas CORS.
 
-### 1. **Hero Section**
-- Banner principal com call-to-action
-- Estatísticas da empresa
-- Navegação suave para outras seções
+## 📄 Páginas
 
-### 2. **Empreendimentos**
-- Cards individuais para cada empreendimento
-- Paletas de cores específicas
-- Informações detalhadas e CTAs
+- **index.html** - Página inicial com Hero, Empreendimentos e Contato
+- **pages/sobre.html** - Página Sobre com história, valores e números da empresa
 
-### 3. **Sobre a Angélette**
-- História da empresa
-- Valores e missão
-- Números e estatísticas
+## 🎨 Tecnologias Utilizadas
 
-### 4. **Contato**
-- Formulário de contato funcional
-- Informações de contato
-- Integração com WhatsApp
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilização e animações
+- **JavaScript (Vanilla)** - Funcionalidades interativas
+- **Google Fonts** - Tipografia (Inter e Poppins)
 
-### 5. **Footer**
-- Links institucionais
-- Redes sociais
-- Informações legais
+## ✨ Funcionalidades
 
-## 🎨 Design System
+- ✅ Design responsivo
+- ✅ Menu mobile
+- ✅ Chatbot integrado
+- ✅ Integração com WhatsApp
+- ✅ Integração com Google Maps
+- ✅ Animações suaves
+- ✅ Scroll suave
+- ✅ Navegação entre páginas
+
+## 📱 Responsividade
+
+O site é totalmente responsivo e funciona perfeitamente em:
+- 📱 Dispositivos móveis
+- 📱 Tablets
+- 💻 Desktops
+- 🖥️ Telas grandes
+
+## 🔧 Personalização
 
 ### Cores
-- **Angélette**: Tons de verde (#3a9d3a)
-- **Vale dos Pássaros**: Verde claro
-- **Golden Green**: Verde escuro + dourado
-- **Dom Village**: Vermelho + branco
 
-### Tipografia
-- **Títulos**: Poppins (display)
-- **Corpo**: Inter (sans-serif)
+As cores principais estão definidas em `css/styles.css` na variável `:root`:
 
-### Componentes
-- Botões com hover effects
-- Cards com sombras suaves
-- Formulários com validação visual
-- Animações de entrada e saída
+```css
+:root {
+  --angelette-600: #4a7c4a;
+  --angelette-700: #3d653d;
+  /* ... */
+}
+```
+
+### Conteúdo
+
+- Edite `index.html` para modificar a página inicial
+- Edite `pages/sobre.html` para modificar a página sobre
+- Edite `js/script.js` para modificar funcionalidades JavaScript
+- Edite `css/styles.css` para modificar estilos
 
 ## 📞 Contato
 
-- **Telefone**: (21) 99837-6181
-- **E-mail**: contato@angeleti.com.br
-- **Localização**: Teresópolis e Maricá/RJ
-
-## 🔧 Desenvolvimento
-
-### Estrutura de Pastas
-```
-src/
-├── components/          # Componentes reutilizáveis
-│   ├── Navbar.vue      # Menu de navegação
-│   ├── Hero.vue        # Seção principal
-│   ├── Empreendimentos.vue
-│   ├── Sobre.vue
-│   ├── Contato.vue
-│   ├── Footer.vue
-│   └── WhatsAppButton.vue
-├── App.vue              # Componente principal
-├── main.js              # Ponto de entrada
-└── style.css            # Estilos globais
-```
-
-### Scripts Disponíveis
-- `npm run dev`: Servidor de desenvolvimento
-- `npm run build`: Build para produção
-- `npm run preview`: Preview da build de produção
-
-## 📈 Performance
-
-- Lazy loading de imagens
-- Otimização de bundle com Vite
-- Preconnect para recursos externos
-- Meta tags para SEO
-
-## 🌐 SEO
-
-- Meta tags otimizadas
-- Estrutura semântica HTML5
-- Open Graph para redes sociais
-- Schema markup para rich snippets
-
-## 🎭 Vue.js Features
-
-- **Composition API**: Reatividade moderna
-- **Vue Transitions**: Animações suaves
-- **Reactive Data**: Estado reativo
-- **Component Communication**: Props e emits
-- **Lifecycle Hooks**: onMounted, onUnmounted
+Para mais informações sobre o projeto, entre em contato através do site.
 
 ---
 
-Desenvolvido com ❤️ para a Angélette Incorporadora
+**Desenvolvido com ❤️ para ANGELETI INCORPORADORA**
