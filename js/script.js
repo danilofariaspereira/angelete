@@ -24,15 +24,36 @@ if (mobileMenuBtn && mobileMenu) {
   });
 }
 
-// Navbar scroll effect
+// Navbar scroll effect e Back to Top
 const navbar = document.getElementById('navbar');
+const backToTopBtn = document.querySelector('.back-to-top');
 
 window.addEventListener('scroll', () => {
   if (navbar) {
     if (window.pageYOffset > 50) {
-      navbar.style.background = 'rgba(255, 255, 255, 0.2)';
+      navbar.style.background = 'rgba(74, 124, 74, 0.3)';
     } else {
-      navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+      navbar.style.background = 'rgba(74, 124, 74, 0.2)';
+    }
+  }
+  
+  // Mostrar/ocultar botão back-to-top (não mostrar no banner)
+  if (backToTopBtn) {
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      if (window.pageYOffset > heroBottom) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    } else {
+      // Fallback: mostrar após 400px de scroll
+      if (window.pageYOffset > 400) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
     }
   }
 });
@@ -108,14 +129,6 @@ function goToEmpreendimento(id) {
 // CHATBOT FUNCTIONALITY
 // ============================================
 
-const chatToggle = document.getElementById('chat-toggle');
-const chatWindow = document.getElementById('chat-window');
-const chatToggleImg = document.getElementById('chat-toggle-img');
-const chatClose = document.getElementById('chat-close');
-const chatOptions = document.getElementById('chat-options');
-const chatResponse = document.getElementById('chat-response');
-const chatResponseText = document.getElementById('chat-response-text');
-
 const chatOptionsData = [
   {
     text: 'Tenho algumas dúvidas e gostaria de saber mais',
@@ -137,17 +150,36 @@ const chatOptionsData = [
 let selectedChatType = '';
 
 function toggleChat() {
+  const chatWindow = document.getElementById('chat-window');
+  const chatToggle = document.getElementById('chat-toggle');
+  const chatToggleImg = document.getElementById('chat-toggle-img');
+  const chatClose = document.getElementById('chat-close');
+  const chatOptions = document.getElementById('chat-options');
+  const chatResponse = document.getElementById('chat-response');
+  
   if (chatWindow && chatToggle) {
     const isOpen = !chatWindow.classList.contains('hidden');
     
     if (isOpen) {
+      // Fechar chat
       chatWindow.classList.add('hidden');
-      if (chatToggleImg) chatToggleImg.style.display = 'block';
-      if (chatClose) chatClose.classList.add('hidden');
+      if (chatToggleImg) {
+        chatToggleImg.style.display = 'block';
+      }
+      if (chatClose) {
+        chatClose.classList.add('hidden');
+        chatClose.style.display = 'none';
+      }
     } else {
+      // Abrir chat
       chatWindow.classList.remove('hidden');
-      if (chatToggleImg) chatToggleImg.style.display = 'none';
-      if (chatClose) chatClose.classList.remove('hidden');
+      if (chatToggleImg) {
+        chatToggleImg.style.display = 'none';
+      }
+      if (chatClose) {
+        chatClose.classList.remove('hidden');
+        chatClose.style.display = 'block';
+      }
       
       // Resetar estado do chat
       if (chatOptions) chatOptions.style.display = 'flex';
@@ -161,6 +193,10 @@ function selectChatOption(index) {
   if (!option) return;
   
   selectedChatType = option.type;
+  
+  const chatOptions = document.getElementById('chat-options');
+  const chatResponse = document.getElementById('chat-response');
+  const chatResponseText = document.getElementById('chat-response-text');
   
   if (chatOptions) chatOptions.style.display = 'none';
   if (chatResponse && chatResponseText) {
@@ -180,10 +216,6 @@ function goToWhatsAppFromChat() {
   
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, '_blank');
-}
-
-if (chatToggle) {
-  chatToggle.addEventListener('click', toggleChat);
 }
 
 // ============================================
@@ -218,6 +250,61 @@ function handleChatToggleError(img) {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Garantir estado inicial correto do chatbot
+  const chatClose = document.getElementById('chat-close');
+  const chatToggleImg = document.getElementById('chat-toggle-img');
+  if (chatClose) {
+    chatClose.classList.add('hidden');
+    chatClose.style.display = 'none';
+  }
+  if (chatToggleImg) {
+    chatToggleImg.style.display = 'block';
+  }
+  
+  // Gerenciar fallback do vídeo do hero
+  const heroVideo = document.getElementById('hero-video');
+  const heroImageFallback = document.getElementById('hero-image-fallback');
+  
+  if (heroVideo && heroImageFallback) {
+    // Por padrão, mostrar a imagem (fallback)
+    heroImageFallback.style.display = 'block';
+    heroVideo.style.display = 'none';
+    
+    // Verificar se o vídeo carregou
+    heroVideo.addEventListener('loadeddata', () => {
+      // Vídeo carregou com sucesso, esconder imagem e mostrar vídeo
+      heroImageFallback.style.display = 'none';
+      heroVideo.style.display = 'block';
+      heroVideo.classList.add('loaded');
+    });
+    
+    heroVideo.addEventListener('canplay', () => {
+      // Vídeo pode ser reproduzido
+      heroImageFallback.style.display = 'none';
+      heroVideo.style.display = 'block';
+      heroVideo.classList.add('loaded');
+    });
+    
+    heroVideo.addEventListener('error', () => {
+      // Se o vídeo não carregar, manter a imagem de fallback
+      console.log('Vídeo não encontrado, usando imagem de fallback');
+      heroVideo.style.display = 'none';
+      heroImageFallback.style.display = 'block';
+    });
+    
+    // Tentar carregar o vídeo
+    heroVideo.load();
+    
+    // Se após 3 segundos o vídeo não carregou, manter fallback
+    setTimeout(() => {
+      if (heroVideo.readyState === 0 || heroVideo.readyState < 2) {
+        console.log('Vídeo não carregou a tempo, usando imagem de fallback');
+        heroVideo.style.display = 'none';
+        heroImageFallback.style.display = 'block';
+      }
+    }, 3000);
+  }
+  
   // Fechar menu mobile ao clicar fora
   document.addEventListener('click', (e) => {
     if (mobileMenu && mobileMenuBtn && 
@@ -243,6 +330,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  
+  // Verificar posição inicial do scroll para back-to-top
+  if (backToTopBtn) {
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      if (window.pageYOffset > heroBottom) {
+        backToTopBtn.classList.add('show');
+      }
+    }
+  }
 });
 
 // ============================================

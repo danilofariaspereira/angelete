@@ -41,10 +41,7 @@
           <div class="logo-img-container">
             <img src="public/images/logo-angelette.avif" alt="ANGELETI INCORPORADORA" class="logo-img" onerror="handleLogoError(this)">
           </div>
-          <div class="logo-text">
-            <span class="logo-text-main">ANGELETI</span>
-            <span class="logo-text-sub">INCORPORADORA</span>
-          </div>
+          <span class="logo-text-main">ANGELETI</span>
         </div>
 
         <!-- Desktop Menu -->
@@ -79,13 +76,18 @@
     <section id="home" class="hero-section">
       <div class="hero-background">
         <div class="hero-overlay"></div>
-        <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')"></div>
+        <video class="hero-video" autoplay muted loop playsinline id="hero-video">
+          <source src="public/video/video-home.mp4" type="video/mp4">
+          <source src="public/video/video-home.webm" type="video/webm">
+        </video>
+        <!-- Fallback para imagem se vídeo não carregar -->
+        <div class="hero-image hero-image-fallback" id="hero-image-fallback" style="background-image: url('public/video/video-home.png')"></div>
         <div class="hero-overlay-pattern"></div>
       </div>
 
       <div class="hero-content">
         <div class="hero-text">
-          <h1 class="hero-title">Seja bem-vindo a Angeleti Incorporadora</h1>
+          <h1 class="hero-title"><strong>Angeleti</strong>, <strong>Incorporadora</strong> e <strong>Construtora</strong></h1>
           <p class="hero-subtitle">Lugar de transformar sonhos em realidade</p>
         </div>
       </div>
@@ -352,7 +354,6 @@
           </div>
           <div class="chat-header-text">
             <span class="chat-header-title">ANGELETI</span>
-            <span class="chat-header-subtitle">INCORPORADORA</span>
             <p class="chat-header-status">Online</p>
           </div>
         </div>

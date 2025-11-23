@@ -32,86 +32,11 @@
     <title>Sobre a ANGELETI INCORPORADORA - Transformando paisagens em lugares únicos</title>
     <link rel="stylesheet" href="../css/styles.css">
     <style>
-      .sobre-banner {
-        position: relative;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        padding-top: 5rem;
-      }
-      .sobre-banner-bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-      }
-      .sobre-banner-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom right, rgba(42, 66, 42, 0.85), rgba(51, 81, 51, 0.75), rgba(61, 101, 61, 0.85));
-        z-index: 10;
-      }
-      .sobre-banner-image {
-        width: 100%;
-        height: 100%;
-        background-image: url('../public/images/banner-sobre-angelete.avif');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      .sobre-banner-pattern {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.2);
-        z-index: 20;
-      }
-      .sobre-banner-content {
-        position: relative;
-        z-index: 30;
-        text-align: center;
-        color: white;
-        padding: 0 1.25rem;
-        max-width: 64rem;
-        margin: 0 auto;
-      }
-      .sobre-banner-title {
-        font-size: 1.875rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-      }
-      @media (min-width: 768px) {
-        .sobre-banner-title {
-          font-size: 4.5rem;
-          margin-bottom: 2rem;
-        }
-      }
-      @media (min-width: 1024px) {
-        .sobre-banner-title {
-          font-size: 5rem;
-        }
-      }
       .text-gradient-white {
         background: linear-gradient(to right, white, #e5e7eb, #d1d5db);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-      }
-      .sobre-banner-subtitle {
-        font-size: 1.125rem;
-        color: #e5e7eb;
-        margin-bottom: 2rem;
-        max-width: 48rem;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.75;
-      }
-      @media (min-width: 768px) {
-        .sobre-banner-subtitle {
-          font-size: 1.5rem;
-          margin-bottom: 3rem;
-        }
       }
       .content-grid {
         display: grid;
@@ -380,10 +305,7 @@
           <div class="logo-img-container">
             <img src="../public/images/logo-angelette.avif" alt="ANGELETI INCORPORADORA" class="logo-img" onerror="handleLogoError(this)">
           </div>
-          <div class="logo-text">
-            <span class="logo-text-main">ANGELETI</span>
-            <span class="logo-text-sub">INCORPORADORA</span>
-          </div>
+          <span class="logo-text-main">ANGELETI</span>
         </div>
 
         <!-- Desktop Menu -->
@@ -415,20 +337,22 @@
     </nav>
 
     <!-- Banner Section -->
-    <section class="sobre-banner">
-      <div class="sobre-banner-bg">
-        <div class="sobre-banner-overlay"></div>
-        <div class="sobre-banner-image"></div>
-        <div class="sobre-banner-pattern"></div>
+    <section class="hero-section">
+      <div class="hero-background">
+        <div class="hero-overlay"></div>
+        <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')"></div>
+        <div class="hero-overlay-pattern"></div>
       </div>
-      
-      <div class="sobre-banner-content">
-        <h1 class="sobre-banner-title">
-          Sobre a <span class="text-gradient-white">Angeleti Incorporadora</span>
-        </h1>
-        <p class="sobre-banner-subtitle">
-          Há mais de 15 anos transformando paisagens em lugares únicos para viver
-        </p>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Sobre a <span class="text-gradient-white" style="background: linear-gradient(to right, white, #e5e7eb, #d1d5db); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Angeleti Incorporadora</span>
+          </h1>
+          <p class="hero-subtitle">
+            Há mais de 15 anos transformando paisagens em lugares únicos para viver
+          </p>
+        </div>
       </div>
 
       <!-- Scroll Indicator -->
@@ -756,7 +680,6 @@
           </div>
           <div class="chat-header-text">
             <span class="chat-header-title">ANGELETI</span>
-            <span class="chat-header-subtitle">INCORPORADORA</span>
             <p class="chat-header-status">Online</p>
           </div>
         </div>
