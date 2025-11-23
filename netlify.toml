@@ -1,4 +1,4 @@
-ajustes [build]
+[build]
   publish = "dist"
   command = "npm run build"
 
