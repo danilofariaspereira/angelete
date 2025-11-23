@@ -63,7 +63,7 @@ window.addEventListener('scroll', () => {
 // ============================================
 
 function scrollToNext() {
-  const nextSection = document.querySelector('#grupo-angelette');
+  const nextSection = document.querySelector('#teresopolis');
   if (nextSection) {
     nextSection.scrollIntoView({ behavior: 'smooth' });
   }
