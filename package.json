@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "serve": "npx http-server . -p 3000 -o",
-    "build": "echo 'No build needed for static site'"
+    "build": "mkdir -p dist && cp -r *.html pages css js public netlify.toml dist/ 2>/dev/null || echo 'Files copied'"
   },
   "devDependencies": {}
 }
