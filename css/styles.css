@@ -928,12 +928,14 @@ h1, h2, h3, h4, h5, h6 {
 .footer-logo-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .footer-logo-main {
   font-size: 1.5rem;
   font-weight: 700;
   color: white;
+  line-height: 1.2;
 }
 
 .footer-logo-sub {
