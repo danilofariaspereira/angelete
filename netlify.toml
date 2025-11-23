@@ -1,4 +1,4 @@
 [build]
   publish = "."
-  command = "echo 'No build needed for static site'"
+  command = "echo 'No build needed for static site' && exit 0"
 
