@@ -204,6 +204,7 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
+        align-items: stretch;
       }
       @media (min-width: 1024px) {
         .cta-grid {
@@ -211,10 +212,17 @@
         }
       }
       .cta-card {
-        background: #f9fafb;
+        background: rgba(42, 66, 42, 0.1);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 1rem;
         padding: 2rem;
         text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
       @media (min-width: 768px) {
         .cta-card {
@@ -222,18 +230,36 @@
         }
       }
       .cta-card-alt {
-        background: var(--angelette-50);
+        background: rgba(42, 66, 42, 0.1);
       }
       .cta-title {
         font-size: 1.875rem;
         font-weight: 700;
         color: #111827;
         margin-bottom: 1rem;
+        min-height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
       }
       .cta-text {
-        font-size: 1.25rem;
+        font-size: 1rem;
         color: #4b5563;
         margin-bottom: 2rem;
+        line-height: 1.75;
+        flex-grow: 1;
+        text-align: center;
+      }
+      @media (min-width: 768px) {
+        .cta-text {
+          font-size: 1.125rem;
+        }
+      }
+      .cta-card button {
+        margin-top: auto;
+        width: auto;
+        align-self: center;
       }
       /* btn-secondary está definido no CSS global agora */
       .section-header-custom {
@@ -337,7 +363,7 @@
       <div class="hero-content">
         <div class="hero-text">
           <h1 class="hero-title">
-            Sobre a <span class="text-gradient-white" style="background: linear-gradient(to right, white, #e5e7eb, #d1d5db); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Angeleti Incorporadora</span>
+            Sobre a <span class="text-gradient-white" style="background: linear-gradient(to right, white, #e5e7eb, #d1d5db); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><strong>Angeleti</strong> <strong>Incorporadora</strong> e <strong>Construtora</strong></span>
           </h1>
           <p class="hero-subtitle">
             Há mais de 15 anos transformando paisagens em lugares únicos para viver
