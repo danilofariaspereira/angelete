@@ -9,17 +9,20 @@ const menuIcon = document.getElementById('menu-icon');
 const closeIcon = document.getElementById('close-icon');
 
 if (mobileMenuBtn && mobileMenu) {
-  mobileMenuBtn.addEventListener('click', () => {
+  mobileMenuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isOpen = mobileMenu.classList.contains('show');
     
     if (isOpen) {
       mobileMenu.classList.remove('show');
-      menuIcon.classList.remove('hidden');
-      closeIcon.classList.add('hidden');
+      mobileMenu.classList.add('hidden');
+      if (menuIcon) menuIcon.classList.remove('hidden');
+      if (closeIcon) closeIcon.classList.add('hidden');
     } else {
+      mobileMenu.classList.remove('hidden');
       mobileMenu.classList.add('show');
-      menuIcon.classList.add('hidden');
-      closeIcon.classList.remove('hidden');
+      if (menuIcon) menuIcon.classList.add('hidden');
+      if (closeIcon) closeIcon.classList.remove('hidden');
     }
   });
 }
@@ -250,6 +253,24 @@ function handleChatToggleError(img) {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Garantir estado inicial correto do menu mobile
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  
+  if (mobileMenu) {
+    mobileMenu.classList.remove('show');
+    if (!mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+    }
+  }
+  if (menuIcon) {
+    menuIcon.classList.remove('hidden');
+  }
+  if (closeIcon) {
+    closeIcon.classList.add('hidden');
+  }
+  
   // Garantir estado inicial correto do chatbot
   const chatClose = document.getElementById('chat-close');
   const chatToggleImg = document.getElementById('chat-toggle-img');
@@ -307,11 +328,17 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Fechar menu mobile ao clicar fora
   document.addEventListener('click', (e) => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
     if (mobileMenu && mobileMenuBtn && 
         !mobileMenu.contains(e.target) && 
         !mobileMenuBtn.contains(e.target) &&
         mobileMenu.classList.contains('show')) {
       mobileMenu.classList.remove('show');
+      mobileMenu.classList.add('hidden');
       if (menuIcon) menuIcon.classList.remove('hidden');
       if (closeIcon) closeIcon.classList.add('hidden');
     }
